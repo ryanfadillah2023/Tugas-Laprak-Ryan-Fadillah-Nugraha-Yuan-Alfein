@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>LAPORAN TEORI</title>
+  <style id="styleMode">
+    body {
+      background-color: #f5f5f5;
+      color: #222;
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    h1, h2 {
+      text-align: center;
+    }
+    h3 {
+      cursor: pointer;
+      color: #0d6efd;
+    }
+    .content {
+      margin-bottom: 20px;
+    }
+    .hidden {
+      display: none;
+    }
+    #modeBtn {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      font-weight: bold;
+      background-color: #0d6efd;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>LAPORAN TEORI</h1>
+  <h2>Ryan Fadillah Nugraha Yuan Alfein | 202332071</h2>
+  <h4 style="text-align:center;">Kelas A | No. PC: 25</h4>
+  <p style="text-align:center;">
+    Dosen: Muhammad Fadli Prathama, S.Si., M.MSI.<br>
+    Asisten: Davina, Karina, Clarenca, Izzat<br>
+    INSTITUT TEKNOLOGI PLN – SISTEM INFORMASI – 2025
+  </p>
+
+  <button id="modeBtn">Ganti Tampilan</button>
+
+  <div class="content">
+    <h3 onclick="toggleContent('isi1')">1. Mengapa menggunakan CSS dan JavaScript dalam pemrograman web?</h3>
+    <div id="isi1">
+      <p>CSS (Cascading Style Sheets) digunakan untuk mengatur tampilan dan gaya dari elemen-elemen HTML, seperti warna, font, layout, dan animasi. Tanpa CSS, tampilan web akan terlihat sangat sederhana dan tidak menarik.</p>
+      <p>JavaScript digunakan untuk memberikan interaktivitas pada halaman web, seperti validasi form, animasi dinamis, manipulasi elemen secara langsung, serta pengambilan data dari server (AJAX).</p>
+      <p><strong>Kesimpulan:</strong> CSS mempercantik tampilan, JavaScript membuat web menjadi interaktif dan dinamis.</p>
+    </div>
+  </div>
+
+  <div class="content">
+    <h3 onclick="toggleContent('isi2')">2. Bagaimana CSS dan JavaScript dapat diintegrasikan dalam pemrograman web?</h3>
+    <div id="isi2">
+      <p>CSS dan JavaScript bisa diintegrasikan ke HTML dengan tiga cara:</p>
+      <ul>
+        <li><strong>Internal:</strong> ditulis langsung di dalam file HTML dengan tag <code>&lt;style&gt;</code> dan <code>&lt;script&gt;</code>.</li>
+        <li><strong>Eksternal:</strong> menggunakan file terpisah (.css dan .js), lalu dipanggil ke HTML.</li>
+        <li><strong>Inline:</strong> langsung dalam atribut tag HTML, contoh <code>style=""</code> atau <code>onclick=""</code>.</li>
+      </ul>
+      <p><strong>Kesimpulan:</strong> cara eksternal lebih rapi dan mudah dikelola.</p>
+    </div>
+  </div>
+
+  <div class="content">
+    <h3 onclick="toggleContent('isi3')">3. Jelaskan apa saja keuntungan menggunakan JavaScript dan CSS?</h3>
+    <div id="isi3">
+      <p><strong>Keuntungan CSS:</strong></p>
+      <ul>
+        <li>Memisahkan konten dan tampilan.</li>
+        <li>Mudah dikelola.</li>
+        <li>Halaman lebih cepat dimuat.</li>
+        <li>Tampilan konsisten di seluruh halaman.</li>
+      </ul>
+      <p><strong>Keuntungan JavaScript:</strong></p>
+      <ul>
+        <li>Meningkatkan interaktivitas pengguna.</li>
+        <li>Bisa memanipulasi elemen (DOM) langsung.</li>
+        <li>Kompatibel dengan banyak browser.</li>
+        <li>Dapat membuat aplikasi seperti SPA.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="content">
+    <h3 onclick="toggleContent('isi4')">4. Jelaskan apa saja keuntungan menggunakan Bootstrap?</h3>
+    <div id="isi4">
+      <ul>
+        <li>Komponen siap pakai (button, form, navbar, dll).</li>
+        <li>Responsif untuk berbagai ukuran layar.</li>
+        <li>Tampilan rapi dan konsisten.</li>
+        <li>Dokumentasi lengkap dan mudah dipelajari.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="content">
+    <h3 onclick="toggleContent('isi5')">5. Contoh penggunaan Bootstrap</h3>
+    <div id="isi5">
+      <p>Membuat halaman pribadi dengan Bootstrap:</p>
+      <pre style="white-space:pre-wrap;background:#eee;padding:10px;border-radius:8px;">
+&lt;div class="container text-center mt-5"&gt;
+  &lt;img src="foto.jpg" class="rounded-circle" style="width:150px;"&gt;
+  &lt;h1&gt;Ryan Fadillah Nugraha&lt;/h1&gt;
+  &lt;p&gt;2011-2017 : SD Negeri 01 Sawahan&lt;/p&gt;
+  &lt;p&gt;2017-2020 : SMP Negeri 8 Padang&lt;/p&gt;
+&lt;/div&gt;
+      </pre>
+      <p><strong>Fungsi:</strong> Menampilkan profil secara menarik dan responsif menggunakan Bootstrap. Komponen seperti container, gambar, dan text-center membuat halaman terlihat profesional di berbagai perangkat.</p>
+     
+      <p><strong>Screenshot hasil running halaman web:</strong></p>
+      <img src="Screenshot.png" alt="Screenshot Halaman Web" style="width:100%; max-width:600px; border:2px solid #ccc; border-radius:10px;">
+    </div>
+  </div>
+
+  <script>
+    function toggleContent(id) {
+      const bagian = document.getElementById(id);
+      const confirmHide = confirm("Ingin menyembunyikan bagian ini?");
+      if (confirmHide) {
+        bagian.classList.toggle("hidden");
+      }
+    }
+
+    const modeBtn = document.getElementById("modeBtn");
+    modeBtn.addEventListener("click", () => {
+      const style = document.getElementById("styleMode");
+      if (style.innerHTML.includes("background-color: #f5f5f5")) {
+        style.innerHTML = `
+          body {
+            background-color: #ff00ff;
+            color: yellow;
+            font-family: 'Comic Sans MS', cursive;
+            padding: 10px;
+          }
+          h3 { color: red; }
+          #modeBtn {
+            background-color: lime;
+            color: purple;
+            border-radius: 0;
+          }
+        `;
+      } else {
+        style.innerHTML = `
+          body {
+            background-color: #f5f5f5;
+            color: #222;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+          }
+          h1, h2 { text-align: center; }
+          h3 { cursor: pointer; color: #0d6efd; }
+          .content { margin-bottom: 20px; }
+          .hidden { display: none; }
+          #modeBtn {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-weight: bold;
+            background-color: #0d6efd;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+          }
+        `;
+      }
+    });
+  </script>
+
+</body>
+</html>
